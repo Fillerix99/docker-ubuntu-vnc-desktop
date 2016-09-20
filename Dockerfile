@@ -28,7 +28,7 @@ RUN apt-get update \
     && apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
-RUN cd /home/ubuntu && wget http://www.otohits.net/dl/OtohitsApp_Linux_3100_B.zip && unzip OtohitsApp_Linux_3100_B.zip && cd OtohitsApp && wget https://raw.githubusercontent.com/Fillerix99/sstorage/master/otohits.ini
+RUN wget http://www.otohits.net/dl/OtohitsApp_Linux_3100_B.zip && unzip OtohitsApp_Linux_3100_B.zip && cd OtohitsApp && wget https://raw.githubusercontent.com/Fillerix99/sstorage/master/otohits.ini
 RUN cd /usr/share/applications && wget https://raw.githubusercontent.com/Fillerix99/sstorage/master/surf.desktop
 ADD web /web/
 RUN pip install setuptools wheel && pip install -r /web/requirements.txt
